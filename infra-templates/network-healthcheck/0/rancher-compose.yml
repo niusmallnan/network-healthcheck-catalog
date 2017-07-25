@@ -1,0 +1,21 @@
+.catalog:
+  name: "netork-healthcheck"
+  version: "v0.0.1"
+  minimum_rancher_version: v1.6.0-alpha1
+  questions:
+    - variable: "RANCHER_DEBUG"
+      label: "Enable Debug Logs"
+      description: "This will enable very verbose debug logs."
+      type: "boolean"
+      default: "false"
+      required: true
+
+network-healthcheck:
+  health_check:
+    request_line: GET /healthcheck HTTP/1.0
+    port: 9898
+    interval: 2000
+    response_timeout: 2000
+    unhealthy_threshold: 3
+    healthy_threshold: 2
+    strategy: none

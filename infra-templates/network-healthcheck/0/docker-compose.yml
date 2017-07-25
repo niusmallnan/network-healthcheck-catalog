@@ -1,0 +1,13 @@
+version: '2'
+services:
+  network-healthcheck:
+    image: niusmallnan/network-healthcheck:dev
+    labels:
+      io.rancher.scheduler.global: 'true'
+    environment:
+      RANCHER_DEBUG: '${RANCHER_DEBUG}'
+    logging:
+      driver: json-file
+      options:
+        max-size: 25m
+        max-file: '2'
