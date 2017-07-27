@@ -1,11 +1,12 @@
 version: '2'
 services:
   network-healthcheck:
-    image: niusmallnan/network-healthcheck:dev
+    image: niusmallnan/network-healthcheck:v0.1.0
     labels:
       io.rancher.scheduler.global: 'true'
     environment:
       RANCHER_DEBUG: '${RANCHER_DEBUG}'
+      ROUTER_HTTP_CHECK: '${ROUTER_HTTP_CHECK}'
     logging:
       driver: json-file
       options:

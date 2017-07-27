@@ -1,6 +1,6 @@
 .catalog:
   name: "netork-healthcheck"
-  version: "v0.0.1"
+  version: "v0.1.0"
   minimum_rancher_version: v1.6.0-alpha1
   questions:
     - variable: "RANCHER_DEBUG"
@@ -8,6 +8,12 @@
       description: "This will enable very verbose debug logs."
       type: "boolean"
       default: "false"
+      required: true
+    - variable: "ROUTER_HTTP_CHECK"
+      label: "Enable HTTP check For Router Containers"
+      description: "This will enable http check for router containers."
+      type: "boolean"
+      default: "true"
       required: true
 
 network-healthcheck:
