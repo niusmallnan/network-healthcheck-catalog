@@ -6,6 +6,7 @@ services:
       io.rancher.scheduler.global: 'true'
     environment:
       RANCHER_DEBUG: '${RANCHER_DEBUG}'
+      RANCHER_METADATA_IP: '${RANCHER_METADATA_IP}'
       ROUTER_HTTP_CHECK: '${ROUTER_HTTP_CHECK}'
     logging:
       driver: json-file

@@ -9,6 +9,12 @@
       type: "boolean"
       default: "false"
       required: true
+    - variable: "RANCHER_METADATA_IP"
+      label: "Metadata IP"
+      description: "IP address of rancher-metadata service. Default is `169.254.169.250`"
+      type: "string"
+      default: "169.254.169.250"
+      required: true
     - variable: "ROUTER_HTTP_CHECK"
       label: "Enable HTTP check For Router Containers"
       description: "This will enable http check for router containers."
