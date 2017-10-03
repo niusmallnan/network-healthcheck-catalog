@@ -1,0 +1,33 @@
+.catalog:
+  name: "netork-healthcheck"
+  version: "v0.1.1"
+  minimum_rancher_version: v1.6.0-alpha1
+  questions:
+    - variable: "RANCHER_DEBUG"
+      label: "Enable Debug Logs"
+      description: "This will enable very verbose debug logs."
+      type: "boolean"
+      default: "false"
+      required: true
+    - variable: "RANCHER_METADATA_ADDRESS"
+      label: "Metadata IP"
+      description: "IP address of rancher-metadata service. Default is `169.254.169.250`"
+      type: "string"
+      default: "169.254.169.250"
+      required: true
+    - variable: "ROUTER_HTTP_CHECK"
+      label: "Enable HTTP check For Router Containers"
+      description: "This will enable http check for router containers."
+      type: "boolean"
+      default: "true"
+      required: true
+
+network-healthcheck:
+  health_check:
+    request_line: GET /healthcheck HTTP/1.0
+    port: 9898
+    interval: 2000
+    response_timeout: 2000
+    unhealthy_threshold: 3
+    healthy_threshold: 2
+    strategy: none
