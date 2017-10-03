@@ -1,7 +1,7 @@
 version: '2'
 services:
   network-healthcheck:
-    image: niusmallnan/network-healthcheck:v0.1.1
+    image: niusmallnan/network-healthcheck:v0.1.2
     labels:
       io.rancher.scheduler.global: 'true'
     environment:
